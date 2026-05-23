@@ -1,7 +1,7 @@
 <h1 align="center">🔐 Multimodal Authentication System</h1>
 
 <p align="center">
-AI-powered biometric authentication using <b>Face Recognition</b> and <b>Voice Authentication</b>
+Multimodal biometric authentication using <b>Face Recognition</b> and <b>Voice Authentication</b>
 </p>
 
 <p align="center">
@@ -185,6 +185,3 @@ Authentication Success ✅
 
 ---
 
-<p align="center">
-Made with ❤️ using Python and AI
-</p>
