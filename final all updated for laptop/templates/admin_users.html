@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 style="margin-bottom:25px;">Registered Users</h1>
+
+<div style="display:flex; justify-content:flex-end; margin-bottom:20px;">
+    <a class="btn primary" href="{{ url_for('enroll') }}">+ Enroll New User</a>
+</div>
+
+
+<style>
+
+.users-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#111;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.users-table th{
+    padding:14px;
+    background:#00b76b;
+    color:#fff;
+    text-align:center;
+    font-size:15px;
+}
+
+.users-table td{
+    padding:12px;
+    color:#ddd;
+    text-align:center;
+    border-bottom:1px solid #333;
+    font-size:14px;
+}
+
+.users-table tr:hover{
+    background:#1c1c1c;
+}
+
+.status-complete{
+    color:#15ff76;
+    font-weight:bold;
+}
+
+.status-only{
+    color:#ffaa33;
+}
+
+.status-missing{
+    color:#ff4444;
+}
+
+/* NEW */
+.btn-delete{
+    background:#ff3b3b;
+    padding:6px 14px;
+    border-radius:6px;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.btn-delete:hover{
+    background:#ff1a1a;
+}
+
+</style>
+
+
+<table class="users-table">
+
+    <tr>
+        <th>User ID</th>
+        <th>User Name</th>  <!-- NEW -->
+        <th>Face</th>
+        <th>Voice</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for u in users %}
+    <tr>
+
+        <td>{{u.id}}</td>
+
+        <!-- NEW -->
+        <td>{{u.name}}</td>
+
+        <td>{{ "✔" if u.face else "✘" }}</td>
+        <td>{{ "✔" if u.voice else "✘" }}</td>
+
+        <td>
+            {% if u.status=="COMPLETE" %}
+                <span class="status-complete">{{u.status}}</span>
+            {% elif u.status=="ONLY FACE" or u.status=="ONLY VOICE" %}
+                <span class="status-only">{{u.status}}</span>
+            {% else %}
+                <span class="status-missing">{{u.status}}</span>
+            {% endif %}
+        </td>
+
+        <td>
+            <a class="btn-delete"
+               onclick="return confirm('Delete permanently?');"
+               href="{{ url_for('delete_user', uid=u.id) }}">
+               Delete
+            </a>
+        </td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

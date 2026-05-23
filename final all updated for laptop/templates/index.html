@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="landing">
+
+    <div class="hero-panel">
+
+        <h1 class="hero-title glow">A Multi-Modal Biometric Authentication 
+Framework Integrating Voice and Face Recognition</h1>
+
+        <p class="hero-sub">
+            Authenticate securely with advanced <strong> face + voice</strong> technology.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="btn primary pulse" href="{{ url_for('authenticate') }}">
+                Authenticate Now
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h2>Face Recognition</h2>
+            <p class="card-text">Automatic  face capture and model training.</p>
+            <ul>
+                <li>High Accuracy LBPH Model</li>
+                <li>Haar Cascade Classifer for Feature extraction</li>
+                <li>Fast Processing</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h2>Voice Verification</h2>
+            <p class="card-text">Unique  voiceprints using MFCC & GMM.</p>
+            <ul>
+                <li>MFCC + Delta Features</li>
+                <li>GMM Speaker Modeling</li>
+            
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h2>Secure Access</h2>
+            <p class="card-text">Dual biometric validation for maximum security.</p>
+            <ul>
+                <li>Face Match</li>
+                <li>Voice Passphrase Match</li>
+                <li>Instant Result</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

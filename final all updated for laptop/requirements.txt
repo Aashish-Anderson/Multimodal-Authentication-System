@@ -1,0 +1,7 @@
+opencv-python
+opencv-contrib-python
+sounddevice
+soundfile
+numpy
+librosa
+flask
