@@ -181,7 +181,7 @@ Authentication Success ✅
 
 ## 👨‍💻 Author
 
-**Aashish Anderson**
+**Aashish S Anderson**
 
 ---
 
